@@ -1,6 +1,6 @@
-# dotfiles
+# my 2026 dotfiles
 
-[Gentoo](https://wiki.gentoo.org/wiki/Main_page) · [mango](https://github.com/DreamMaoMao/mango) on Wayland · [Catppuccin Macchiato](https://catppuccin.com/)
+[Gentoo](https://wiki.gentoo.org/wiki/Main_Page) · [mango](https://github.com/DreamMaoMao/mango) on Wayland · [Catppuccin Macchiato](https://catppuccin.com/)
 | | |
 |---|---|
 | `config/` | → `~/.config` — mango, waybar, wofi, mako, wlogout, swaylock, foot, fastfetch |

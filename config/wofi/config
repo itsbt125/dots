@@ -1,0 +1,7 @@
+show=drun
+width=720
+height=500
+location=center
+insensitive=true
+allow_markup=true
+prompt=Launch

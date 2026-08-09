@@ -1,0 +1,195 @@
+/* ReGreet — Catppuccin Mocha */
+
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+@define-color overlay0  #6c7086;
+@define-color text      #cdd6f4;
+@define-color subtext0  #a6adc8;
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color green     #a6e3a1;
+@define-color red       #f38ba8;
+@define-color peach     #fab387;
+@define-color mauve     #cba6f7;
+
+window.background {
+    background-color: @base;
+    color: @text;
+}
+
+/* Clock pill, top center */
+#clock_frame {
+    background-color: alpha(@surface0, 0.85);
+    border-radius: 0 0 16px 16px;
+    border: 1px solid alpha(@overlay0, 0.5);
+    border-top: none;
+    padding: 12px 28px 14px 28px;
+}
+
+#clock_frame label {
+    color: @blue;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+/* Login card */
+frame.background {
+    background-color: alpha(@mantle, 0.92);
+    color: @text;
+    border: 1px solid @surface1;
+    border-radius: 20px;
+}
+
+frame.background > widget {
+    border-radius: 20px;
+}
+
+/* Greeting */
+#message_label {
+    color: @subtext0;
+    font-size: 15px;
+}
+
+/* Username combo */
+#usernames_box {
+    background-color: @surface0;
+    border-radius: 12px;
+    border: 1px solid @surface1;
+}
+
+#usernames_box button,
+#usernames_box dropdown {
+    background-color: transparent;
+    color: @text;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+}
+
+#usernames_box popover contents {
+    background-color: @surface0;
+    color: @text;
+    border-radius: 12px;
+    border: 1px solid @surface1;
+}
+
+#usernames_box popover row:hover {
+    background-color: @surface1;
+}
+
+#usernames_box popover row:selected {
+    background-color: @blue;
+    color: @base;
+}
+
+/* Manual username / password entries */
+#username_entry,
+#session_entry,
+#secret_entry,
+#visible_entry {
+    background-color: @surface0;
+    color: @text;
+    caret-color: @blue;
+    border: 1px solid @surface1;
+    border-radius: 12px;
+    padding: 10px 14px;
+}
+
+#username_entry:focus,
+#session_entry:focus,
+#secret_entry:focus,
+#visible_entry:focus {
+    outline: none;
+    border: 1px solid @blue;
+}
+
+#input_label,
+#session_label {
+    color: @subtext0;
+}
+
+#user_toggle,
+#sess_toggle {
+    background-color: transparent;
+    color: @subtext0;
+    border: none;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+#user_toggle:hover,
+#sess_toggle:hover {
+    background-color: @surface0;
+    color: @text;
+}
+
+/* Login button */
+#login_button {
+    background-color: @blue;
+    color: @base;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+#login_button:hover {
+    background-color: @lavender;
+}
+
+#cancel_button {
+    background-color: @surface0;
+    color: @text;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+}
+
+#cancel_button:hover {
+    background-color: @surface1;
+}
+
+/* Reboot / power off */
+#reboot_button,
+#poweroff_button {
+    background-color: alpha(@surface0, 0.9);
+    color: @text;
+    border: 1px solid @surface1;
+    border-radius: 12px;
+    padding: 8px 18px;
+}
+
+#reboot_button:hover {
+    background-color: @peach;
+    color: @base;
+}
+
+#poweroff_button:hover {
+    background-color: @red;
+    color: @base;
+}
+
+/* Notification bar (errors etc.) */
+#notif_info {
+    background-color: @surface0;
+    border-radius: 12px;
+}
+
+#notif_info.error {
+    background-color: @red;
+}
+
+#notif_info.error #notif_label {
+    color: @base;
+}
+
+#notif_info.info #notif_label {
+    color: @text;
+}
+
+#notif_label {
+    color: @text;
+}

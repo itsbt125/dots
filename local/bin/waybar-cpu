@@ -1,0 +1,30 @@
+#!/bin/sh
+read -r _ a b c d e f g h i j < /proc/stat
+sleep 1
+read -r _ a2 b2 c2 d2 e2 f2 g2 h2 i2 j2 < /proc/stat
+t1=$((a+b+c+d+e+f+g+h+i+j)); i1=$((d+e))
+t2=$((a2+b2+c2+d2+e2+f2+g2+h2+i2+j2)); i2=$((d2+e2))
+if [ "$t2" -gt "$t1" ]; then
+  usage=$(awk -v t1="$t1" -v i1="$i1" -v t2="$t2" -v i2="$i2" 'BEGIN { printf "%d", 100 - (100 * (i2 - i1)) / (t2 - t1) }')
+else
+  usage=0
+fi
+
+hw=""
+for h in /sys/class/hwmon/hwmon*; do
+  if [ "$(cat "$h/name" 2>/dev/null)" = k10temp ] && [ -r "$h/temp1_input" ]; then
+    hw=$h
+    break
+  fi
+done
+
+if [ -n "$hw" ]; then
+  temp=$(($(cat "$hw/temp1_input") / 1000))
+  if   [ "$temp" -lt 50 ]; then cls="cool"
+  elif [ "$temp" -lt 65 ]; then cls="normal"
+  elif [ "$temp" -lt 80 ]; then cls="warm"
+  else                          cls="hot"; fi
+  printf '{"text":"\363\260\273\240 %s%%","class":"%s","tooltip":"CPU %s%% · %s°C"}\n' "$usage" "$cls" "$usage" "$temp"
+else
+  printf '{"text":"\363\260\273\240 %s%%","class":"normal","tooltip":"CPU %s%%"}\n' "$usage" "$usage"
+fi

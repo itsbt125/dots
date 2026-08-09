@@ -1,0 +1,14 @@
+# Editor backups / scratch copies
+*.bak
+*.bak[0-9]
+*.save
+*~
+
+# btop runtime
+config/btop/btop.log
+
+# Anything that looks like a credential
+*.key
+*.pem
+*_token
+*secret*

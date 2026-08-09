@@ -1,0 +1,87 @@
+@define-color bg #1e1e2e;
+@define-color bg-alt #181825;
+@define-color surface #313244;
+@define-color overlay #6c7086;
+@define-color text #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color blue #89b4fa;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+}
+
+window {
+    background-color: @bg;
+    color: @text;
+    border-radius: 16px;
+    border: 1px solid @surface;
+}
+
+outer-box {
+    background-color: transparent;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+input {
+    background-color: @bg-alt;
+    color: @text;
+    border: 1px solid @surface;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    caret-color: @blue;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid @blue;
+}
+
+input image {
+    color: @blue;
+    margin-right: 6px;
+}
+
+list {
+    background-color: transparent;
+}
+
+scrollbar {
+    background-color: transparent;
+    border: none;
+}
+
+scrollbar slider {
+    background-color: @surface;
+    border-radius: 4px;
+    min-width: 6px;
+}
+
+entry {
+    color: @text;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+entry image {
+    margin-right: 12px;
+    -gtk-icon-size: 26px;
+    color: @subtext;
+}
+
+entry:selected {
+    background-color: @surface;
+    color: @text;
+    border: 1px solid @overlay;
+}
+
+entry:selected image {
+    color: @blue;
+}
+
+entry:selected #text {
+    color: @text;
+}

@@ -1,0 +1,10 @@
+# greetd — login manager. ReGreet runs inside cage, a minimal Wayland
+# compositor; the session it launches is start-mango (same wrapper a manual
+# TTY login would run).
+
+[terminal]
+vt = "next"
+
+[default_session]
+command = "cage -s -mlast -- regreet"
+user = "greetd"

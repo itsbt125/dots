@@ -1,0 +1,17 @@
+#!/bin/sh
+case "${1:-toggle}" in
+on)     exec bluetoothctl power on ;;
+off)    exec bluetoothctl power off ;;
+status) bluetoothctl show | grep -E "Powered|PowerState" ;;
+toggle)
+	if bluetoothctl show | grep -q "Powered: yes"; then
+		exec bluetoothctl power off
+	else
+		exec bluetoothctl power on
+	fi
+	;;
+*)
+	echo "usage: bt [on|off|toggle|status]" >&2
+	exit 1
+	;;
+esac

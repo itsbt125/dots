@@ -14,3 +14,6 @@
 ![image](images/desktop.png)
 ![image](images/htop.png)
 ![image](images/fastfetch.png)
+
+# extra notes
+- expected idle ram usage on my setup is around ~1 gig. ignore levels shown in screenshots, they aren't accurate.
